@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maillot de Dijon — Mode Responsable</title>
+    <title>Maillot de Dijon — Mode Vivante & Responsable</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,6 +15,7 @@
                     colors: {
                         cream: '#F9FBF7',
                         nature: '#6d7f4a',
+                        'nature-dark': '#4a5b2d',
                         ink: '#10212B',
                     },
                     fontFamily: {
@@ -26,15 +27,34 @@
         }
     </script>
     <style>
-        body { background-color: #F9FBF7; color: #10212B; scroll-behavior: smooth; }
+        body { background-color: #F9FBF7; color: #10212B; overflow-x: hidden; }
+        
+        /* Animations au scroll */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Effet de grain subtil pour le côté premium */
         .grain::before {
-            content: ""; position: fixed; inset: 0;
+            content: "";
+            position: fixed; inset: 0;
             background-image: url("https://grainy-gradients.vercel.app/noise.svg");
             opacity: 0.03; pointer-events: none; z-index: 99;
         }
+
         .nav-blur { backdrop-filter: blur(15px); background: rgba(249, 251, 247, 0.8); }
+        
+        .card-eco { 
+            background: white; 
+            border: 1px solid rgba(109, 127, 74, 0.1); 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+        }
+        .card-eco:hover { transform: scale(1.02); border-color: #6d7f4a; }
+
+        .btn-fancy {
+            position: relative; overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-fancy:hover { letter-spacing: 1px; box-shadow: 0 10px 20px rgba(16, 33, 43, 0.2); }
     </style>
 </head>
 <body class="grain">
@@ -42,116 +62,135 @@
     <nav class="fixed top-0 w-full z-50 nav-blur border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-nature rounded-full flex items-center justify-center text-white font-serif font-bold">M</div>
-                <span class="font-serif font-bold text-xl">Maillot de Dijon</span>
+                <div class="w-10 h-10 bg-nature rounded-full flex items-center justify-center text-white font-bold font-serif">M</div>
+                <span class="font-serif font-bold text-xl tracking-tight">Maillot de Dijon</span>
             </div>
             <div class="hidden md:flex gap-10 text-sm font-medium uppercase tracking-widest">
                 <a href="#concept" class="hover:text-nature transition-colors">Concept</a>
                 <a href="#rse" class="hover:text-nature transition-colors">Éthique</a>
-                <a href="#galerie" class="hover:text-nature transition-colors">Galerie</a>
+                <a href="#boutique" class="hover:text-nature transition-colors">Boutique</a>
             </div>
-            <a href="https://www.instagram.com/maillotdijon?igsh=MTJxaHp5YzhvZmR6ag==" target="_blank" class="bg-ink text-white px-6 py-3 rounded-full text-xs font-bold uppercase hover:scale-105 transition-transform">Instagram</a>
+            <a href="#boutique" class="btn-fancy bg-ink text-white px-6 py-3 rounded-full text-xs font-bold uppercase">Commander</a>
         </div>
     </nav>
 
     <section class="pt-40 pb-20 px-6">
-        <div class="max-w-7xl mx-auto text-center reveal active">
-            <span class="text-nature font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Dijon — Éco-conçu</span>
-            <h1 class="font-serif text-5xl md:text-7xl mb-6">La planète te dit merci,<br><span class="italic text-nature text-4xl md:text-6xl">et ton look aussi.</span></h1>
-            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">Le premier t-shirt bourguignon en coton bio qui allie style minimaliste et impact maximal pour l'environnement.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#boutique" class="bg-ink text-white px-10 py-5 rounded-full font-bold text-lg hover:shadow-xl transition-shadow">Acheter — 20€</a>
-                <a href="#rse" class="border border-gray-200 px-10 py-5 rounded-full font-bold text-lg hover:bg-gray-50 transition-colors">Nos Engagements</a>
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal active">
+                <span class="text-nature font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Dijon — France</span>
+                <h1 class="font-serif text-6xl lg:text-8xl leading-none mb-8">Le T-shirt qui <br><span class="italic text-nature">respire.</span></h1>
+                <p class="text-lg text-gray-600 mb-10 max-w-lg leading-relaxed">Plus qu’un vêtement, une expérience botanique. Conçu à Dijon en coton bio, son motif floral se révèle au fil de vos lavages.</p>
+                <div class="flex items-center gap-6">
+                    <a href="#boutique" class="btn-fancy bg-ink text-white px-8 py-4 rounded-full font-bold">Acheter — 20€</a>
+                    <div class="flex -space-x-3">
+                        <div class="w-10 h-10 rounded-full border-2 border-cream bg-gray-200 flex items-center justify-center text-[10px] font-bold">100%</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-cream bg-nature flex items-center justify-center text-white text-[10px] font-bold">BIO</div>
+                    </div>
+                    <span class="text-xs font-bold text-gray-400 uppercase tracking-tighter">Édition Fondatrice</span>
+                </div>
+            </div>
+            <div class="relative reveal active" style="transition-delay: 0.3s">
+                <div class="absolute inset-0 bg-nature/5 rounded-full blur-3xl"></div>
+                <svg viewBox="0 0 400 450" class="relative z-10 w-full drop-shadow-2xl">
+                    <path d="M100 60 L60 110 L20 180 L80 200 L80 420 L320 420 L320 200 L380 180 L340 110 L300 60 Z" fill="white" stroke="#E5E7EB" stroke-width="1"/>
+                    <path d="M200 240 Q200 180 230 150 M200 240 Q200 180 170 150" stroke="#6d7f4a" stroke-width="2" fill="none" opacity="0.4"/>
+                    <circle cx="200" cy="210" r="15" fill="#6d7f4a" opacity="0.1"/>
+                </svg>
             </div>
         </div>
     </section>
 
-    <section id="galerie" class="py-20 bg-white px-6 border-y border-gray-100">
+    <section id="rse" class="py-24 bg-white border-y border-gray-100 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-serif text-3xl mb-12 text-center">L'esprit Maillot de Dijon</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80" alt="T-shirt" class="w-full h-full object-cover">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="reveal">
+                    <h2 class="font-serif text-4xl lg:text-5xl mb-4">Engagement Radical.</h2>
+                    <p class="text-gray-500 max-w-md">Nous ne faisons pas que des vêtements. Nous restaurons l'écosystème bourguignon.</p>
                 </div>
-                <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden reveal" style="transition-delay: 0.1s">
-                    <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&q=80" alt="Coton Bio" class="w-full h-full object-cover">
+                <div class="bg-nature/10 px-6 py-4 rounded-2xl reveal">
+                    <span class="text-nature font-bold text-3xl font-serif">2€</span>
+                    <span class="text-nature text-sm font-bold block uppercase tracking-widest">Reversés / Vente</span>
                 </div>
-                <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden reveal" style="transition-delay: 0.2s">
-                    <img src="https://images.unsplash.com/photo-1444491741275-3747c53c99b4?auto=format&fit=crop&q=80" alt="Nature" class="w-full h-full object-cover">
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-eco p-10 rounded-[40px] reveal">
+                    <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-8">🌱</div>
+                    <h3 class="font-bold text-xl mb-4">Coton GOTS</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Fibres 100% biologiques certifiées. Culture sans pesticides, économisant 90% d'eau par rapport au coton conventionnel.</p>
                 </div>
-                <div class="aspect-square bg-gray-100 rounded-3xl overflow-hidden reveal" style="transition-delay: 0.3s">
-                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80" alt="Look" class="w-full h-full object-cover">
+                <div class="card-eco p-10 rounded-[40px] reveal" style="transition-delay: 0.2s">
+                    <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-8">📍</div>
+                    <h3 class="font-bold text-xl mb-4">Fait à Dijon</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Conception, impression thermique et expédition depuis notre atelier dijonnais. Circuit court garanti.</p>
+                </div>
+                <div class="card-eco p-10 rounded-[40px] reveal" style="transition-delay: 0.4s">
+                    <div class="w-14 h-14 bg-cream rounded-2xl flex items-center justify-center mb-8">🌳</div>
+                    <h3 class="font-bold text-xl mb-4">Reforestation</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Chaque achat finance la plantation d'arbres en Bourgogne pour compenser l'empreinte carbone et restaurer la biodiversité.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="rse" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-            <div class="reveal text-center md:text-left">
-                <div class="text-4xl mb-4">🌍</div>
-                <h3 class="font-bold text-xl mb-2 text-nature">Éco-conçu</h3>
-                <p class="text-gray-500 text-sm">Coton 100% biologique certifié GOTS. Sans aucun produit chimique nocif pour ta peau ou la terre.</p>
-            </div>
-            <div class="reveal text-center md:text-left" style="transition-delay: 0.2s">
-                <div class="text-4xl mb-4">🏗️</div>
-                <h3 class="font-bold text-xl mb-2 text-nature">Production Locale</h3>
-                <p class="text-gray-500 text-sm">Imprimé et expédié directement depuis Dijon pour réduire l'empreinte carbone au minimum.</p>
-            </div>
-            <div class="reveal text-center md:text-left" style="transition-delay: 0.4s">
-                <div class="text-4xl mb-4">♻️</div>
-                <h3 class="font-bold text-xl mb-2 text-nature">Zéro Plastique</h3>
-                <p class="text-gray-500 text-sm">Tes commandes sont envoyées dans des enveloppes en papier kraft recyclé et compostable.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="boutique" class="py-24 px-6 bg-ink text-white rounded-[60px] mx-4 mb-10">
+    <section id="boutique" class="py-24 px-6">
         <div class="max-w-3xl mx-auto text-center reveal">
-            <h2 class="font-serif text-5xl mb-8 italic">Le Maillot Fondateur</h2>
-            <div class="bg-white/10 backdrop-blur-md p-10 rounded-[40px] border border-white/20">
-                <div class="text-5xl font-bold mb-2">20€</div>
-                <p class="text-nature font-bold uppercase tracking-tighter text-sm mb-8">Série Limitée — Stock réduit</p>
+            <div class="inline-block px-4 py-1 bg-nature/10 text-nature rounded-full text-xs font-bold uppercase mb-6">Offre de lancement</div>
+            <h2 class="font-serif text-5xl mb-12">Prêt à voir votre <br>t-shirt <span class="italic">fleurir ?</span></h2>
+            
+            <div class="bg-white border border-gray-100 rounded-[50px] p-12 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-8 font-serif text-6xl opacity-5 text-nature">M</div>
+                <div class="text-6xl font-bold mb-4 font-serif">20€</div>
+                <p class="text-gray-400 line-through mb-8">Prix final : 35€</p>
                 
-                <ul class="text-left space-y-4 mb-10 text-sm text-gray-300">
-                    <li class="flex items-center gap-3">✓ Coupe unisexe moderne</li>
-                    <li class="flex items-center gap-3">✓ Sérigraphie artisanale à Dijon</li>
-                    <li class="flex items-center gap-3">✓ Packaging éco-responsable</li>
-                </ul>
+                <div class="space-y-4 mb-10">
+                    <div class="flex items-center justify-center gap-3 text-sm font-medium">
+                        <span class="w-2 h-2 bg-nature rounded-full"></span> Livraison Offerte (dès 2 articles)
+                    </div>
+                    <div class="flex items-center justify-center gap-3 text-sm font-medium">
+                        <span class="w-2 h-2 bg-nature rounded-full"></span> Packaging 100% Kraft Recyclé
+                    </div>
+                </div>
 
-                <button class="w-full bg-white text-ink py-5 rounded-full font-bold text-lg hover:bg-nature hover:text-white transition-all">RESERVER MON MAILLOT</button>
+                <button class="btn-fancy w-full bg-ink text-white py-6 rounded-full font-bold text-lg">AJOUTER AU PANIER</button>
+                <p class="mt-6 text-[10px] text-gray-400 uppercase tracking-widest font-bold">Paiement sécurisé · Expédition sous 48h</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 px-6">
+    <footer class="bg-ink text-white py-20 px-6">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div>
-                <div class="font-serif text-2xl font-bold mb-2 text-center md:text-left">Maillot de Dijon</div>
-                <p class="text-gray-400 text-sm">La planète te dit merci, et ton look aussi.</p>
+            <div class="text-center md:text-left">
+                <div class="font-serif text-2xl mb-2">Maillot de Dijon</div>
+                <p class="text-gray-500 text-sm italic">"La mode qui respecte la terre."</p>
             </div>
-            <div class="flex gap-8">
-                <a href="https://www.instagram.com/maillotdijon?igsh=MTJxaHp5YzhvZmR6ag==" target="_blank" class="font-bold uppercase text-xs tracking-widest hover:text-nature transition-colors">Instagram</a>
-                <a href="mailto:contact@maillotdijon.com" class="font-bold uppercase text-xs tracking-widest hover:text-nature transition-colors">Contact</a>
+            <div class="flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
+                <a href="#" class="hover:text-nature transition-colors">Instagram</a>
+                <a href="#" class="hover:text-nature transition-colors">Mentions Légales</a>
+                <a href="mailto:contact@maillotdedijon.fr" class="hover:text-white transition-colors">Contact</a>
             </div>
         </div>
-        <div class="text-center mt-16 text-[10px] text-gray-300 uppercase tracking-[0.5em]">
-            © 2025 MAILLOT DE DIJON — FAIT AVEC AMOUR ET NATURE
+        <div class="max-w-7xl mx-auto mt-20 pt-10 border-t border-white/5 text-center">
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.4em]">© 2025 Dijon — Artisanat Durable</p>
         </div>
     </footer>
 
     <script>
+        // Animation au défilement
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) {
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add("active");
                 }
             }
         }
         window.addEventListener("scroll", reveal);
+        
+        // Initial check
         reveal();
     </script>
 </body>
