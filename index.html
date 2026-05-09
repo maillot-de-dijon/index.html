@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maillot de Dijon — Le T-shirt vivant</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>Maillot de Dijon — L'Éclosion Textile</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -14,157 +13,129 @@
                     colors: {
                         'dijon-dark': '#10212B',
                         'dijon-green': '#8FA464',
-                        'dijon-cream': '#EFFBDB',
+                        'dijon-bg': '#EFFBDB',
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['DM Sans', 'sans-serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Instrument Serif', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #EFFBDB; color: #10212B; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        .step-card { background: rgba(255, 255, 255, 0.5); border: 1px solid #8FA464; }
+        body { background-color: #EFFBDB; color: #10212B; cursor: default; }
+        .smooth-reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.22, 1, 0.36, 1); }
+        .smooth-reveal.active { opacity: 1; transform: translateY(0); }
+        .glass { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(143, 164, 100, 0.2); }
+        .btn-hover { transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-hover:hover { transform: scale(1.05); letter-spacing: 1px; }
+        .img-zoom { transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1); }
+        .img-container:hover .img-zoom { transform: scale(1.1); }
     </style>
 </head>
-<body class="font-sans">
+<body class="selection:bg-dijon-green selection:text-white">
 
-    <!-- NAVIGATION -->
-    <nav class="fixed top-0 w-full z-50 bg-dijon-cream/80 backdrop-blur-md border-b border-dijon-green/20">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-                <span class="font-serif font-bold text-2xl">Maillot de Dijon</span>
+    <!-- NAV FLUIDE -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl">
+        <div class="glass rounded-full px-8 py-4 flex items-center justify-between">
+            <span class="font-serif text-2xl italic tracking-tight italic font-bold">Maillot de Dijon</span>
+            <div class="flex items-center gap-8">
+                <a href="https://www.instagram.com/maillotdijon" target="_blank" class="text-xs font-extrabold uppercase tracking-widest hover:text-dijon-green transition-colors">Instagram</a>
+                <a href="#boutique" class="bg-dijon-dark text-white px-6 py-2 rounded-full text-xs font-bold btn-hover">Shop</a>
             </div>
-            <a href="https://www.instagram.com/maillotdijon?igsh=MTJxaHp5YzhvZmR6ag==" target="_blank" class="bg-dijon-dark text-white px-5 py-2 rounded-full text-xs font-bold uppercase hover:bg-dijon-green transition-colors">Instagram</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="pt-40 pb-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div class="reveal active">
-                <h1 class="font-serif text-5xl md:text-7xl leading-tight mb-6">Le T-shirt fleuri qui <span class="italic text-dijon-green">évolue.</span></h1>
-                <p class="text-xl mb-8 opacity-80 font-medium">La planète te dit merci... et ton look aussi. ♡</p>
-                <p class="text-gray-700 mb-10 leading-relaxed">Grâce à nos encres bio-réactives, votre maillot révèle une nouvelle fleur à chaque lavage. Un rappel constant que la nature est vivante.</p>
-                <div class="flex gap-4">
-                    <a href="#boutique" class="bg-dijon-dark text-white px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform">Commander — 20€</a>
-                </div>
-            </div>
-            <div class="relative reveal active">
-                <div class="bg-dijon-green/10 rounded-[40px] p-8 border-2 border-dashed border-dijon-green/30">
-                    <img src="https://i.ibb.co/v4m0Ym9/maillot-mockup.png" alt="Concept Maillot de Dijon" class="w-full h-auto drop-shadow-2xl rounded-2xl">
-                    <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-2xl shadow-xl border border-dijon-green">
-                        <span class="text-dijon-green font-bold">100% Biodégradable</span>
+    <!-- HERO MINIMALISTE -->
+    <section class="min-h-screen flex flex-col items-center justify-center px-6 pt-20">
+        <div class="text-center smooth-reveal active">
+            <h1 class="font-serif text-7xl md:text-[10rem] leading-[0.85] mb-8">La planète te dit <span class="italic text-dijon-green">merci...</span></h1>
+            <p class="font-sans text-xl md:text-2xl font-light tracking-wide max-w-2xl mx-auto opacity-70">...et ton look aussi. Le premier t-shirt vivant conçu à Dijon qui fleurit à chaque lavage.</p>
+        </div>
+        
+        <div class="mt-16 w-full max-w-5xl img-container overflow-hidden rounded-[40px] smooth-reveal active" style="transition-delay: 0.2s">
+            <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80" class="w-full h-[60vh] object-cover img-zoom shadow-2xl">
+        </div>
+    </section>
+
+    <!-- LE CONCEPT D'ÉVOLUTION -->
+    <section class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-24 items-center">
+            <div class="smooth-reveal">
+                <h2 class="font-serif text-6xl mb-10 italic">Lave, porte, change... <br>et recommence.</h2>
+                <div class="space-y-12">
+                    <div class="border-l-2 border-dijon-green pl-8">
+                        <h3 class="font-bold text-xl mb-2 italic">Lavage n°1</h3>
+                        <p class="text-gray-600">Nos encres bio-réactives interagissent avec l'eau pour révéler une nouvelle fleur.</p>
+                    </div>
+                    <div class="border-l-2 border-dijon-green/30 pl-8 opacity-50">
+                        <h3 class="font-bold text-xl mb-2 italic">Lavage n°3</h3>
+                        <p class="text-gray-600">Le design final s'épanouit totalement. Votre pièce devient unique.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- SECTION EVOLUTION (LE CŒUR DU PROJET) -->
-    <section class="py-20 bg-white/50 px-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="font-serif text-4xl mb-4">1 Lavage = 1 Nouveau Design</h2>
-            <p class="text-dijon-green font-bold uppercase tracking-widest mb-12">L'expérience botanique unique</p>
-            
-            <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="step-card p-6 rounded-3xl reveal">
-                    <div class="text-xs font-bold text-dijon-green mb-4">ÉTAPE 01</div>
-                    <div class="h-40 bg-white rounded-2xl mb-4 flex items-center justify-center text-3xl">🌱</div>
-                    <h3 class="font-bold">Neuf</h3>
-                    <p class="text-xs text-gray-500 mt-2">Design minimaliste : les graines sont plantées.</p>
-                </div>
-                <div class="step-card p-6 rounded-3xl reveal" style="transition-delay: 0.1s">
-                    <div class="text-xs font-bold text-dijon-green mb-4">ÉTAPE 02</div>
-                    <div class="h-40 bg-white rounded-2xl mb-4 flex items-center justify-center text-3xl">🌿</div>
-                    <h3 class="font-bold">Après 1 lavage</h3>
-                    <p class="text-xs text-gray-500 mt-2">La tige apparaît, le design s'étoffe.</p>
-                </div>
-                <div class="step-card p-6 rounded-3xl reveal" style="transition-delay: 0.2s">
-                    <div class="text-xs font-bold text-dijon-green mb-4">ÉTAPE 03</div>
-                    <div class="h-40 bg-white rounded-2xl mb-4 flex items-center justify-center text-3xl">🌸</div>
-                    <h3 class="font-bold">Après 2 lavages</h3>
-                    <p class="text-xs text-gray-500 mt-2">Les premières couleurs florales se révèlent.</p>
-                </div>
-                <div class="step-card p-6 rounded-3xl reveal" style="transition-delay: 0.3s">
-                    <div class="text-xs font-bold text-dijon-green mb-4">ÉTAPE 04</div>
-                    <div class="h-40 bg-white rounded-2xl mb-4 flex items-center justify-center text-3xl">💐</div>
-                    <h3 class="font-bold">Après 3 lavages</h3>
-                    <p class="text-xs text-gray-500 mt-2">Éclosion totale. Votre maillot est unique.</p>
+            <div class="glass p-4 rounded-[50px] smooth-reveal">
+                <div class="bg-white rounded-[40px] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80" class="w-full hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ARGUMENTS RSE -->
-    <section class="py-24 px-6 max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div class="reveal">
-                <h2 class="font-serif text-4xl mb-6">Moins d'impact, plus de sens.</h2>
-                <ul class="space-y-6">
-                    <li class="flex gap-4">
-                        <span class="text-2xl text-dijon-green">✓</span>
-                        <div>
-                            <p class="font-bold">Encres Bio-réactives</p>
-                            <p class="text-sm text-gray-600">Sans toxines, sans danger pour la peau et les sols.</p>
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-2xl text-dijon-green">✓</span>
-                        <div>
-                            <p class="font-bold">Coton Biologique</p>
-                            <p class="text-sm text-gray-600">Cultivé avec 90% moins d'eau que le coton classique.</p>
-                        </div>
-                    </li>
-                    <li class="flex gap-4">
-                        <span class="text-2xl text-dijon-green">✓</span>
-                        <div>
-                            <p class="font-bold">Biodégradable</p>
-                            <p class="text-sm text-gray-600">Un vêtement conçu pour retourner à la terre en fin de vie.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="bg-dijon-dark p-10 rounded-[50px] text-white reveal">
-                <p class="italic text-xl mb-6">"L'idée est de créer un lien émotionnel avec le vêtement pour éviter la surconsommation."</p>
-                <p class="font-bold text-dijon-green">— Victoria Grace, Fondatrice</p>
+    <!-- SECTION CHIFFRES & ÉTHIQUE -->
+    <section class="py-32 bg-dijon-dark text-dijon-bg rounded-[60px] mx-4 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-serif text-5xl md:text-7xl mb-16 italic">Engagement Radical</h2>
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="smooth-reveal">
+                    <p class="text-5xl font-serif mb-4 text-dijon-green">100%</p>
+                    <p class="text-sm uppercase tracking-[0.2em] opacity-60 font-bold">Coton Bio GOTS</p>
+                </div>
+                <div class="smooth-reveal" style="transition-delay: 0.1s">
+                    <p class="text-5xl font-serif mb-4 text-dijon-green">0%</p>
+                    <p class="text-sm uppercase tracking-[0.2em] opacity-60 font-bold">Plastique Toxique</p>
+                </div>
+                <div class="smooth-reveal" style="transition-delay: 0.2s">
+                    <p class="text-5xl font-serif mb-4 text-dijon-green">21k€</p>
+                    <p class="text-sm uppercase tracking-[0.2em] opacity-60 font-bold">Investissement Local</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- BOUTIQUE -->
-    <section id="boutique" class="py-20 px-6 text-center">
-        <div class="max-w-2xl mx-auto bg-white p-12 rounded-[60px] border-2 border-dijon-green shadow-2xl reveal">
-            <h2 class="font-serif text-4xl mb-4">Le Maillot Fondateur</h2>
-            <div class="text-5xl font-bold text-dijon-dark mb-6">20€</div>
-            <p class="text-gray-500 mb-10">Lave, porte, change... et recommence. Une marque engagée pour aujourd'hui et demain.</p>
-            <button class="w-full bg-dijon-dark text-white py-5 rounded-2xl font-bold text-lg hover:bg-dijon-green transition-all shadow-lg">AJOUTER AU PANIER</button>
-            <p class="mt-4 text-[10px] uppercase tracking-widest text-gray-400 font-bold">Stock Limité — Édition Dijon</p>
+    <!-- SHOP MODERNE -->
+    <section id="boutique" class="py-40 px-6 text-center">
+        <div class="smooth-reveal">
+            <span class="text-dijon-green font-extrabold uppercase tracking-[0.4em] text-xs mb-6 block">Édition Fondatrice</span>
+            <h2 class="font-serif text-8xl mb-12 italic">Le Maillot.</h2>
+            <div class="max-w-sm mx-auto relative group">
+                <div class="absolute -inset-4 bg-dijon-green/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative bg-white p-12 rounded-[50px] shadow-sm border border-dijon-green/10">
+                    <p class="text-6xl font-serif mb-4">20€</p>
+                    <p class="text-gray-400 text-sm mb-10 italic">Prix juste pour un avenir durable.</p>
+                    <button class="w-full bg-dijon-dark text-white py-6 rounded-2xl font-bold btn-hover tracking-widest text-xs uppercase">Pré-commander</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t border-dijon-green/20 text-center">
-        <p class="font-serif text-xl mb-4">Maillot de Dijon</p>
-        <p class="text-sm text-gray-500 mb-6">La planète te dit merci, et ton look aussi.</p>
-        <div class="flex justify-center gap-6">
-            <a href="https://www.instagram.com/maillotdijon?igsh=MTJxaHp5YzhvZmR6ag==" target="_blank" class="text-xs font-bold uppercase tracking-widest hover:text-dijon-green transition-colors">Instagram</a>
-        </div>
+    <footer class="py-20 px-6 border-t border-dijon-green/10 flex flex-col items-center">
+        <div class="font-serif text-4xl mb-8 italic">Maillot de Dijon</div>
+        <p class="text-xs uppercase tracking-[0.5em] opacity-40 font-bold">Dijon — France — 2026</p>
     </footer>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
-        }, { threshold: 0.1 });
+        }, { threshold: 0.15 });
 
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        document.querySelectorAll('.smooth-reveal').forEach(el => observer.observe(el));
     </script>
-
 </body>
 </html>
