@@ -29,7 +29,9 @@
         .reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal-up.active { opacity: 1; transform: translateY(0); }
         .impact-card { background: white; border-top: 4px solid #8FA464; }
-        .flower-svg { filter: invert(61%) sepia(13%) saturate(913%) hue-rotate(42deg) brightness(96%) contrast(88%); }
+        /* Style des fleurs botaniques selon tes captures */
+        .flower-icon { filter: invert(61%) sepia(13%) saturate(913%) hue-rotate(42deg) brightness(96%) contrast(88%); }
+        .t-shirt-svg { fill: #EFFBDB; opacity: 0.5; }
     </style>
 </head>
 <body class="bg-white font-sans text-brand-dark">
@@ -54,7 +56,8 @@
                 <span class="text-brand-green font-black uppercase text-xs mb-4 tracking-widest italic">Solution Textile n°01</span>
                 <h1 class="font-heavy text-5xl md:text-8xl leading-none mb-8 uppercase italic">La planète te dit merci...</h1>
                 <p class="text-xl font-medium mb-12 opacity-80 leading-snug">
-                    Nous avons inventé un t-shirt qui ne se contente pas de durer : il fleurit au fil des lavages.
+                    Nous avons conçu le premier t-shirt vivant. <br>
+                    Un vêtement qui révèle son jardin intérieur à chaque lavage.
                 </p>
                 <div class="flex gap-4">
                     <a href="#shop" class="bg-brand-dark text-white px-10 py-5 font-black uppercase text-xs tracking-widest hover:bg-brand-green transition-all">Commander le prototype</a>
@@ -67,52 +70,61 @@
             </div>
         </section>
 
-        <!-- SECTION L'INVENTION (T-SHIRTS + FLEURS) -->
+        <!-- L'INVENTION : T-SHIRTS + FLEURS (RÉFÉRENCE IMAGE_35, 36, 37) -->
         <section id="concept" class="py-24 px-8 md:px-24 bg-tech-gray">
             <div class="max-w-7xl mx-auto">
-                <div class="mb-16">
+                <div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
                     <h2 class="font-heavy text-4xl uppercase italic">L'Expérience de Floraison</h2>
+                    <p class="max-w-md text-sm font-medium opacity-60 italic">
+                        Chaque cycle révèle une nouvelle couche florale. Votre t-shirt devient unique, comme votre histoire.
+                    </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-1 bg-brand-dark/10 border border-brand-dark/10">
+                <div class="grid md:grid-cols-3 gap-1 px-1 bg-brand-dark/10">
                     
-                    <!-- NEUF -->
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
-                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ NEUF</span>
+                    <!-- Étape 1 : NEUF (Inspiration Image_35) -->
+                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30 border border-brand-dark/5">
+                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">★ NEUF</span>
                         <div class="h-64 my-10 flex items-center justify-center relative">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503380.png" class="w-44 opacity-10">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-svg" style="top: 45%;">
+                            <!-- Icône T-shirt minimaliste -->
+                            <svg viewBox="0 0 24 24" class="w-44 t-shirt-svg" xmlns="http://www.w3.org/2000/svg"><path d="M7 2L2 7V11H5V22H19V11H22V7L17 2H7Z"/></svg>
+                            <!-- Une fleur unique au centre -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-icon" style="top: 45%;">
                         </div>
-                        <h3 class="font-heavy text-2xl mb-2 uppercase italic">Design d'origine</h3>
-                        <p class="text-[10px] font-bold uppercase text-brand-green italic">Une fleur unique et discrète</p>
+                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Design d'origine</h3>
+                        <p class="text-xs font-bold opacity-60 uppercase mb-4">Une fleur unique et discrète. L'élégance de la promesse.</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-brand-green">Fleur unique</p>
                     </div>
 
-                    <!-- 1 LAVAGE -->
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
-                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ APRÈS 1 LAVAGE</span>
+                    <!-- Étape 2 : 1 LAVAGE (Inspiration Image_36) -->
+                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30 border border-brand-dark/5">
+                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">◆ APRÈS 1 LAVAGE</span>
                         <div class="h-64 my-10 flex items-center justify-center relative">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503380.png" class="w-44 opacity-10">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-10 absolute flower-svg" style="top: 40%; left: 40%;">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-svg" style="top: 50%; right: 38%;">
+                            <svg viewBox="0 0 24 24" class="w-44 t-shirt-svg" xmlns="http://www.w3.org/2000/svg"><path d="M7 2L2 7V11H5V22H19V11H22V7L17 2H7Z"/></svg>
+                            <!-- Deux fleurs -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-10 absolute flower-icon" style="top: 42%; left: 42%;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-icon" style="top: 48%; right: 40%;">
                         </div>
-                        <h3 class="font-heavy text-2xl mb-2 uppercase italic">Bouquet naissant</h3>
-                        <p class="text-[10px] font-bold uppercase text-brand-green italic">2 fleurs révélées</p>
+                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Bouquet naissant</h3>
+                        <p class="text-xs font-bold opacity-60 uppercase mb-4">Les encres s'activent. Une deuxième fleur émerge, plus vibrante.</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-brand-green">2 fleurs révélées</p>
                     </div>
 
-                    <!-- 3 LAVAGES -->
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
+                    <!-- Étape 3 : 3 LAVAGES (Inspiration Image_37) -->
+                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30 border border-brand-dark/5">
                         <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ APRÈS 3 LAVAGES</span>
                         <div class="h-64 my-10 flex items-center justify-center relative">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503380.png" class="w-44 opacity-20">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-9 absolute flower-svg" style="top: 35%; left: 45%;">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-11 absolute flower-svg" style="top: 45%; left: 35%;">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-svg" style="top: 52%; right: 35%;">
-                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-10 absolute flower-svg" style="top: 42%; right: 42%;">
+                            <svg viewBox="0 0 24 24" class="w-44 t-shirt-svg" style="opacity: 0.8" xmlns="http://www.w3.org/2000/svg"><path d="M7 2L2 7V11H5V22H19V11H22V7L17 2H7Z"/></svg>
+                            <!-- Bouquet complet -->
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-9 absolute flower-icon" style="top: 38%; left: 45%;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-11 absolute flower-icon" style="top: 45%; left: 38%;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-12 absolute flower-icon" style="top: 50%; right: 38%;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2926/2926354.png" class="w-10 absolute flower-icon" style="top: 42%; right: 42%;">
                         </div>
-                        <h3 class="font-heavy text-2xl mb-2 uppercase italic">Bouquet complet</h3>
-                        <p class="text-[10px] font-bold uppercase text-brand-green italic">Floraison totale révélée</p>
+                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Bouquet complet</h3>
+                        <p class="text-xs font-bold opacity-60 uppercase mb-4">La révélation finale. Un jardin en pleine floraison sur votre peau.</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-brand-green">Bouquet complet révélé</p>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -122,9 +134,9 @@
             <div class="grid md:grid-cols-2 gap-20">
                 <div class="reveal-up">
                     <h2 class="font-heavy text-4xl mb-8 uppercase italic">Pourquoi 20€ ?</h2>
-                    <p class="text-lg opacity-70">Transparence totale sur nos coûts : coton bio, encres végétales et confection éthique.</p>
+                    <p class="mb-8 text-lg opacity-70">Transparence radicale. Coton GOTS, encres bio-réactives et prix juste pour le producteur.</p>
                 </div>
-                <div class="impact-card p-12 reveal-up">
+                <div class="impact-card p-12 flex flex-col justify-center reveal-up">
                     <p class="text-3xl font-serif italic mb-6">"Chaque lavage révèle une nouvelle fleur."</p>
                     <p class="font-black uppercase text-[10px] tracking-widest text-brand-green italic">— Victoria Grace, Fondatrice</p>
                 </div>
@@ -132,13 +144,16 @@
         </section>
 
         <!-- SHOP -->
-        <section id="shop" class="bg-brand-dark text-white py-32 text-center">
+        <section id="shop" class="bg-brand-dark text-white py-32 px-8 text-center">
             <h2 class="font-heavy text-7xl md:text-9xl uppercase italic mb-8">Le Maillot.</h2>
-            <button class="bg-white text-brand-dark px-12 py-6 font-black uppercase text-sm tracking-widest hover:bg-brand-green hover:text-white transition-all">Commander — 20€</button>
+            <p class="text-brand-green font-black text-2xl mb-12 italic">20,00€ TTC</p>
+            <button class="bg-white text-brand-dark px-12 py-6 font-black uppercase text-sm tracking-widest hover:bg-brand-green hover:text-white transition-all">
+                Prendre part à l'aventure
+            </button>
         </section>
     </main>
 
-    <footer class="p-12 text-center text-[10px] font-black uppercase tracking-widest opacity-40">
+    <footer class="p-12 border-t border-brand-dark/10 text-center text-[10px] font-black uppercase tracking-widest opacity-50">
         ©2026 Maillot de Dijon — Innovation Textile — Fait à Dijon
     </footer>
 
