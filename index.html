@@ -1,598 +1,129 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- CONCEPT -->
+<section id="concept" class="py-28 px-6">
 
-  <title>Maillot de Dijon — Le t-shirt vivant</title>
+  <div class="max-w-7xl mx-auto">
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root{
-      --cream:#EFFBDB;
-      --green:#8FA464;
-      --dark:#10212B;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
-    body{
-      font-family:'DM Sans', sans-serif;
-      background:var(--cream);
-      color:var(--dark);
-      overflow-x:hidden;
-    }
-
-    h1,h2,h3,h4{
-      font-family:'Playfair Display', serif;
-    }
-
-    .fade-up{
-      opacity:0;
-      transform:translateY(50px);
-      transition:all .9s cubic-bezier(.16,1,.3,1);
-    }
-
-    .fade-up.show{
-      opacity:1;
-      transform:translateY(0);
-    }
-
-    .glass{
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.55);
-    }
-
-    .hero-gradient{
-      background:
-      radial-gradient(circle at top left, rgba(143,164,100,.28), transparent 40%),
-      radial-gradient(circle at bottom right, rgba(16,33,43,.09), transparent 30%);
-    }
-
-    .card-hover{
-      transition:all .35s ease;
-    }
-
-    .card-hover:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 45px rgba(16,33,43,.10);
-    }
-
-    .btn-main{
-      transition:all .3s ease;
-    }
-
-    .btn-main:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 15px 30px rgba(16,33,43,.15);
-    }
-
-    .faq-content{
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .35s ease;
-    }
-
-    .shirt{
-      position:relative;
-      width:280px;
-      height:320px;
-      background:white;
-      border-radius:22px;
-      margin:auto;
-      box-shadow:0 25px 50px rgba(16,33,43,.12);
-    }
-
-    .shirt:before{
-      content:'';
-      position:absolute;
-      top:-35px;
-      left:50%;
-      transform:translateX(-50%);
-      width:120px;
-      height:80px;
-      background:white;
-      border-radius:25px;
-    }
-
-    .flower{
-      position:absolute;
-      width:18px;
-      height:18px;
-      background:var(--green);
-      border-radius:50%;
-      opacity:.9;
-    }
-
-    .line{
-      position:absolute;
-      width:2px;
-      background:var(--green);
-      transform-origin:top;
-    }
-
-    .blob{
-      position:absolute;
-      border-radius:999px;
-      filter:blur(60px);
-      opacity:.25;
-      z-index:-1;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full z-50">
-    <div class="max-w-7xl mx-auto px-5 py-4">
-      <div class="glass border border-white/40 rounded-full px-6 py-4 flex items-center justify-between">
-
-        <div class="flex items-center gap-3">
-          <div class="w-11 h-11 rounded-full bg-[#8FA464] flex items-center justify-center text-white font-bold text-xl">
-            M
-          </div>
-
-          <div>
-            <p class="font-bold tracking-wide text-sm">Maillot de Dijon</p>
-          </div>
-        </div>
-
-        <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="#concept" class="hover:opacity-70 transition">Concept</a>
-          <a href="#boutique" class="hover:opacity-70 transition">Boutique</a>
-          <a href="#impact" class="hover:opacity-70 transition">Impact</a>
-          <a href="#contact" class="hover:opacity-70 transition">Contact</a>
-        </nav>
-
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="min-h-screen flex items-center hero-gradient relative overflow-hidden">
-
-    <div class="blob w-72 h-72 bg-[#8FA464] top-10 left-0"></div>
-    <div class="blob w-96 h-96 bg-[#10212B] bottom-0 right-0"></div>
-
-    <div class="max-w-7xl mx-auto px-6 pt-36 grid lg:grid-cols-2 gap-20 items-center">
-
-      <div class="fade-up">
-
-        <span class="uppercase tracking-[0.3em] text-sm text-[#8FA464] font-bold">
-          Mode Vivante • Bourgogne
-        </span>
-
-        <h1 class="text-5xl md:text-7xl leading-tight mt-6 font-bold">
-          Le t-shirt vivant né à Dijon.
-        </h1>
-
-        <p class="mt-8 text-lg leading-relaxed max-w-xl opacity-80">
-          Un vêtement qui évolue avec le temps. Chaque lavage révèle une nouvelle fleur,
-          comme une nature qui reprend vie.
-        </p>
-
-        <div class="mt-10 flex flex-wrap gap-4">
-
-          <a href="#concept"
-             class="btn-main bg-[#10212B] text-white px-8 py-4 rounded-full font-medium">
-            Découvrir la transformation
-          </a>
-
-          <a href="#boutique"
-             class="btn-main border border-[#10212B] px-8 py-4 rounded-full font-medium">
-            Voir la collection
-          </a>
-
-        </div>
-
-      </div>
-
-      <!-- VISUEL -->
-      <div class="fade-up">
-
-        <div class="relative">
-
-          <div class="shirt">
-
-            <div class="line h-28 left-[50%] top-[110px]"></div>
-
-            <div class="flower top-[95px] left-[49%]"></div>
-
-          </div>
-
-          <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white px-6 py-3 rounded-full shadow-lg text-sm font-medium">
-            Design n°1 — Fleur discrète
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONCEPT -->
-  <section id="concept" class="py-28 px-6">
-
-    <div class="max-w-7xl mx-auto">
-
-      <div class="text-center max-w-3xl mx-auto fade-up">
-        <span class="uppercase tracking-[0.25em] text-sm text-[#8FA464] font-bold">
-          Le Concept Magique
-        </span>
-
-        <h2 class="text-4xl md:text-6xl mt-5">
-          Un motif qui fleurit au fil des lavages.
-        </h2>
-
-        <p class="mt-8 text-lg opacity-80">
-          Chaque lavage révèle une nouvelle fleur, comme un rappel que la nature est vivante.
-        </p>
-      </div>
-
-      <div class="mt-20 grid md:grid-cols-3 gap-8">
-
-        <!-- CARD 1 -->
-        <div class="fade-up card-hover bg-white rounded-[32px] p-8 border border-black/5">
-
-          <div class="flex items-center justify-between">
-            <span class="text-sm uppercase tracking-widest opacity-50">Étape 01</span>
-            <span class="text-sm font-bold text-[#8FA464]">NEUF</span>
-          </div>
-
-          <div class="mt-8 shirt scale-[0.72] origin-top mx-auto">
-
-            <div class="line h-28 left-[50%] top-[110px]"></div>
-            <div class="flower top-[95px] left-[49%]"></div>
-
-          </div>
-
-          <p class="mt-4 text-center opacity-70">
-            Une fleur minimaliste apparaît discrètement.
-          </p>
-
-        </div>
-
-        <!-- CARD 2 -->
-        <div class="fade-up card-hover bg-[#8FA464] text-white rounded-[32px] p-8">
-
-          <div class="flex items-center justify-between">
-            <span class="text-sm uppercase tracking-widest opacity-70">Étape 02</span>
-            <span class="text-sm font-bold">APRÈS 1 LAVAGE</span>
-          </div>
-
-          <div class="mt-8 shirt scale-[0.72] origin-top mx-auto">
-
-            <div class="line h-28 left-[50%] top-[110px]"></div>
-
-            <div class="flower top-[95px] left-[49%]"></div>
-            <div class="flower top-[130px] left-[43%]"></div>
-            <div class="flower top-[145px] left-[55%]"></div>
-
-          </div>
-
-          <p class="mt-4 text-center text-white/80">
-            Le bouquet commence à éclore.
-          </p>
-
-        </div>
-
-        <!-- CARD 3 -->
-        <div class="fade-up card-hover bg-[#10212B] text-white rounded-[32px] p-8">
-
-          <div class="flex items-center justify-between">
-            <span class="text-sm uppercase tracking-widest opacity-70">Étape 03</span>
-            <span class="text-sm font-bold">APRÈS 3 LAVAGES</span>
-          </div>
-
-          <div class="mt-8 shirt scale-[0.72] origin-top mx-auto">
-
-            <div class="line h-28 left-[50%] top-[110px]"></div>
-
-            <div class="flower top-[95px] left-[49%]"></div>
-            <div class="flower top-[130px] left-[43%]"></div>
-            <div class="flower top-[145px] left-[55%]"></div>
-            <div class="flower top-[180px] left-[38%]"></div>
-            <div class="flower top-[190px] left-[60%]"></div>
-            <div class="flower top-[220px] left-[48%]"></div>
-
-          </div>
-
-          <p class="mt-4 text-center text-white/80">
-            Le motif révèle toute sa nature.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ENGAGEMENTS -->
-  <section class="py-28 px-6 bg-white">
-
-    <div class="max-w-7xl mx-auto">
-
-      <div class="text-center fade-up">
-        <span class="uppercase tracking-[0.25em] text-sm text-[#8FA464] font-bold">
-          Engagements Premium
-        </span>
-
-        <h2 class="text-4xl md:text-5xl mt-5">
-          Pensé pour durer. Respectueux par nature.
-        </h2>
-      </div>
-
-      <div class="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        <div class="fade-up card-hover rounded-3xl border border-black/5 p-8">
-          <div class="text-4xl">🌿</div>
-          <h3 class="text-2xl mt-6">100% Coton Biologique</h3>
-          <p class="mt-4 opacity-70">
-            Tissus certifiés GOTS, doux et durables.
-          </p>
-        </div>
-
-        <div class="fade-up card-hover rounded-3xl border border-black/5 p-8">
-          <div class="text-4xl">🧪</div>
-          <h3 class="text-2xl mt-6">Encres Bio Sans Toxines</h3>
-          <p class="mt-4 opacity-70">
-            Encres thermochromiques respectueuses de la peau.
-          </p>
-        </div>
-
-        <div class="fade-up card-hover rounded-3xl border border-black/5 p-8">
-          <div class="text-4xl">♻️</div>
-          <h3 class="text-2xl mt-6">Biodégradable</h3>
-          <p class="mt-4 opacity-70">
-            Aucun microplastique, zéro compromis.
-          </p>
-        </div>
-
-        <div class="fade-up card-hover rounded-3xl border border-black/5 p-8">
-          <div class="text-4xl">📦</div>
-          <h3 class="text-2xl mt-6">Made in Bourgogne</h3>
-          <p class="mt-4 opacity-70">
-            Packaging kraft inspiré des pots Fallot.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- IMPACT -->
-  <section id="impact" class="py-28 px-6">
-
-    <div class="max-w-6xl mx-auto bg-[#10212B] text-white rounded-[40px] p-10 md:p-20 relative overflow-hidden fade-up">
-
-      <div class="blob w-80 h-80 bg-[#8FA464] top-0 right-0 opacity-20"></div>
-
-      <div class="max-w-3xl relative z-10">
-
-        <span class="uppercase tracking-[0.25em] text-sm text-[#8FA464] font-bold">
-          Notre Impact
-        </span>
-
-        <h2 class="text-4xl md:text-6xl mt-6 leading-tight">
-          Chaque t-shirt replante un peu de Bourgogne.
-        </h2>
-
-        <p class="mt-8 text-lg text-white/75 leading-relaxed">
-          Nous reversons 2€ par vente à des associations de reforestation
-          en Bourgogne afin de participer à la renaissance des espaces naturels.
-        </p>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- PRIX -->
-  <section id="boutique" class="py-28 px-6 bg-white">
-
-    <div class="max-w-5xl mx-auto text-center fade-up">
-
+    <div class="text-center max-w-3xl mx-auto fade-up">
       <span class="uppercase tracking-[0.25em] text-sm text-[#8FA464] font-bold">
-        Le Prix Juste
+        Le Concept Magique
       </span>
 
-      <h2 class="text-5xl md:text-7xl mt-5">
-        20€
+      <h2 class="text-4xl md:text-6xl mt-5">
+        Un motif qui fleurit au fil des lavages.
       </h2>
 
-      <p class="mt-8 max-w-2xl mx-auto text-lg opacity-70">
-        Un prix transparent pour une fabrication responsable, locale et durable.
+      <p class="mt-8 text-lg opacity-80">
+        Chaque lavage révèle une nouvelle fleur, comme un rappel que la nature est vivante.
       </p>
-
-      <button class="btn-main mt-10 bg-[#8FA464] text-white px-10 py-5 rounded-full text-lg font-medium">
-        Ajouter au panier
-      </button>
-
     </div>
 
-  </section>
+    <div class="mt-20 grid md:grid-cols-3 gap-8">
 
-  <!-- FAQ -->
-  <section class="py-28 px-6">
+      <!-- CARD 1 -->
+      <div class="fade-up group bg-white rounded-[32px] overflow-hidden border border-black/5 hover:-translate-y-2 transition duration-500 shadow-sm hover:shadow-2xl">
 
-    <div class="max-w-4xl mx-auto">
-
-      <div class="text-center fade-up">
-        <span class="uppercase tracking-[0.25em] text-sm text-[#8FA464] font-bold">
-          FAQ & Entretien
-        </span>
-
-        <h2 class="text-4xl md:text-5xl mt-5">
-          Questions fréquentes
-        </h2>
-      </div>
-
-      <div class="mt-16 space-y-5">
-
-        <div class="faq-item fade-up bg-white rounded-2xl p-6">
-          <button class="faq-btn w-full flex justify-between items-center text-left">
-            <span class="font-bold text-lg">Comment fonctionne la transformation ?</span>
-            <span>+</span>
-          </button>
-
-          <div class="faq-content">
-            <p class="pt-5 opacity-70">
-              Les encres réagissent progressivement aux lavages pour révéler de nouvelles fleurs.
-            </p>
-          </div>
+        <div class="overflow-hidden">
+          <img
+            src="design1.jpg"
+            alt="T-shirt neuf"
+            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-700"
+          />
         </div>
 
-        <div class="faq-item fade-up bg-white rounded-2xl p-6">
-          <button class="faq-btn w-full flex justify-between items-center text-left">
-            <span class="font-bold text-lg">Le t-shirt garde-t-il sa qualité ?</span>
-            <span>+</span>
-          </button>
+        <div class="p-8">
+          <div class="flex justify-between items-center">
+            <span class="uppercase tracking-widest text-xs opacity-50">
+              Étape 01
+            </span>
 
-          <div class="faq-content">
-            <p class="pt-5 opacity-70">
-              Oui. Le coton biologique premium conserve sa coupe et sa douceur dans le temps.
-            </p>
+            <span class="text-[#8FA464] font-bold text-sm">
+              NEUF
+            </span>
           </div>
-        </div>
 
-        <div class="faq-item fade-up bg-white rounded-2xl p-6">
-          <button class="faq-btn w-full flex justify-between items-center text-left">
-            <span class="font-bold text-lg">Comment l’entretenir ?</span>
-            <span>+</span>
-          </button>
+          <h3 class="text-3xl mt-5">
+            Première Fleur
+          </h3>
 
-          <div class="faq-content">
-            <p class="pt-5 opacity-70">
-              Lavage à 30°C conseillé. Éviter le sèche-linge pour préserver les encres.
-            </p>
-          </div>
+          <p class="mt-4 opacity-70 leading-relaxed">
+            Une fleur discrète apparaît comme le premier souffle de la nature.
+          </p>
         </div>
 
       </div>
 
-    </div>
-  </section>
+      <!-- CARD 2 -->
+      <div class="fade-up group bg-[#8FA464] text-white rounded-[32px] overflow-hidden hover:-translate-y-2 transition duration-500 shadow-sm hover:shadow-2xl">
 
-  <!-- FOOTER -->
-  <footer id="contact" class="bg-[#10212B] text-white pt-20 pb-10 px-6">
+        <div class="overflow-hidden">
+          <img
+            src="design2.jpg"
+            alt="T-shirt après un lavage"
+            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-700"
+          />
+        </div>
 
-    <div class="max-w-7xl mx-auto">
+        <div class="p-8">
 
-      <div class="grid md:grid-cols-4 gap-14">
+          <div class="flex justify-between items-center">
+            <span class="uppercase tracking-widest text-xs text-white/60">
+              Étape 02
+            </span>
 
-        <div>
-
-          <div class="flex items-center gap-3">
-            <div class="w-11 h-11 rounded-full bg-[#8FA464] flex items-center justify-center font-bold">
-              M
-            </div>
-
-            <span class="font-bold">Maillot de Dijon</span>
+            <span class="font-bold text-sm">
+              APRÈS 1 LAVAGE
+            </span>
           </div>
 
-          <p class="mt-6 text-white/65 leading-relaxed">
-            Le premier t-shirt vivant inspiré de la nature bourguignonne.
+          <h3 class="text-3xl mt-5">
+            Floraison
+          </h3>
+
+          <p class="mt-4 text-white/80 leading-relaxed">
+            Le bouquet commence à se révéler lavage après lavage.
           </p>
 
         </div>
 
-        <div>
-          <h4 class="text-xl">Navigation</h4>
-
-          <ul class="mt-5 space-y-3 text-white/70">
-            <li><a href="#">Concept</a></li>
-            <li><a href="#">Boutique</a></li>
-            <li><a href="#">Impact</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl">Réseaux</h4>
-
-          <ul class="mt-5 space-y-3 text-white/70">
-            <li>TikTok</li>
-            <li>Instagram</li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-xl">Newsletter</h4>
-
-          <div class="mt-6 flex border border-white/20 rounded-full overflow-hidden">
-            <input
-              type="email"
-              placeholder="Votre email"
-              class="bg-transparent px-5 py-4 w-full outline-none placeholder:text-white/40"
-            />
-
-            <button class="bg-[#8FA464] px-6 font-medium">
-              OK
-            </button>
-          </div>
-        </div>
-
       </div>
 
-      <div class="border-t border-white/10 mt-16 pt-8 text-sm text-white/45 flex flex-col md:flex-row justify-between gap-4">
-        <p>© 2026 Maillot de Dijon — Tous droits réservés.</p>
-        <p>Designed for a living future.</p>
+      <!-- CARD 3 -->
+      <div class="fade-up group bg-[#10212B] text-white rounded-[32px] overflow-hidden hover:-translate-y-2 transition duration-500 shadow-sm hover:shadow-2xl">
+
+        <div class="overflow-hidden">
+          <img
+            src="design3.jpg"
+            alt="T-shirt après trois lavages"
+            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition duration-700"
+          />
+        </div>
+
+        <div class="p-8">
+
+          <div class="flex justify-between items-center">
+            <span class="uppercase tracking-widest text-xs text-white/60">
+              Étape 03
+            </span>
+
+            <span class="font-bold text-sm">
+              APRÈS 3 LAVAGES
+            </span>
+          </div>
+
+          <h3 class="text-3xl mt-5">
+            Bouquet Vivant
+          </h3>
+
+          <p class="mt-4 text-white/80 leading-relaxed">
+            La nature s’exprime totalement avec un motif floral complet.
+          </p>
+
+        </div>
+
       </div>
 
     </div>
 
-  </footer>
+  </div>
 
-  <!-- JS -->
-  <script>
-
-    // SCROLL ANIMATIONS
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    },{
-      threshold:0.15
-    });
-
-    document.querySelectorAll('.fade-up').forEach(el=>{
-      observer.observe(el);
-    });
-
-    // FAQ
-    const faqBtns = document.querySelectorAll('.faq-btn');
-
-    faqBtns.forEach(btn=>{
-
-      btn.addEventListener('click', ()=>{
-
-        const content = btn.parentElement.querySelector('.faq-content');
-
-        if(content.style.maxHeight){
-          content.style.maxHeight = null;
-        }else{
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-
-      });
-
-    });
-
-  </script>
-
-</body>
-</html>
+</section>
