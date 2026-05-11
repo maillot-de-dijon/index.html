@@ -1,192 +1,255 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAILLOT DE DIJON | Innovation Textile</title>
+    <title>Maillot de Dijon | Le t-shirt vivant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'brand-dark': '#10212B',
-                        'brand-green': '#8FA464',
-                        'brand-cream': '#EFFBDB',
-                        'tech-gray': '#F2F2F2'
+                        cream: '#EFFBDB',
+                        nature: '#8FA464',
+                        dark: '#10212B',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heavy: ['Archivo Black', 'sans-serif'],
-                    }
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['DM Sans', 'sans-serif'],
+                    },
                 }
             }
         }
     </script>
     <style>
-        .split-grid { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
-        .reveal-up { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal-up.active { opacity: 1; transform: translateY(0); }
-        .impact-card { background: white; border-top: 4px solid #8FA464; }
-        /* Style des fleurs botaniques */
-        .flower-path { fill: none; stroke: #8FA464; stroke-width: 1.5; stroke-linecap: round; }
-        .tshirt-shape { fill: #10212B; opacity: 0.05; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -2px; left: 0; background-color: #10212B; transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .card-hover:hover { transform: translateY(-5px); transition: transform 0.3s ease; }
     </style>
 </head>
-<body class="bg-white font-sans text-brand-dark">
+<body class="bg-cream text-dark font-sans selection:bg-nature selection:text-cream">
 
-    <nav class="fixed top-0 w-full z-50 border-b border-brand-dark/10 bg-white/95 backdrop-blur-md">
-        <div class="px-8 h-16 flex items-center justify-between uppercase tracking-tighter font-black text-sm">
-            <a href="#" class="text-xl">Maillot de Dijon</a>
-            <div class="hidden md:flex gap-10">
-                <a href="#concept" class="hover:text-brand-green">L'Invention</a>
-                <a href="#impact" class="hover:text-brand-green">Impact</a>
-                <a href="#shop" class="hover:text-brand-green">Acheter — 20€</a>
+    <!-- HEADER -->
+    <header class="fixed w-full z-50 bg-cream/80 backdrop-blur-md border-b border-nature/10">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 group cursor-pointer">
+                <div class="w-10 h-10 bg-nature rounded-full flex items-center justify-center text-cream font-serif text-xl font-bold group-hover:scale-110 transition-transform">M</div>
+                <span class="font-serif text-xl tracking-tight uppercase tracking-widest hidden sm:block">Maillot de Dijon</span>
             </div>
-            <a href="https://www.instagram.com/maillotdijon" class="bg-brand-dark text-white px-4 py-1.5 text-[10px]">Instagram</a>
+            <div class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-widest">
+                <a href="#concept" class="nav-link">Concept</a>
+                <a href="#boutique" class="nav-link">Boutique</a>
+                <a href="#impact" class="nav-link">Impact</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="bg-dark text-cream px-6 py-2 rounded-full text-sm font-bold hover:bg-nature transition-colors">Boutique</button>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex flex-col justify-center items-center pt-20 px-6 text-center">
+        <div class="reveal">
+            <span class="inline-block px-4 py-1 border border-nature text-nature rounded-full text-xs font-bold mb-6 uppercase tracking-widest">Innovation Textile Bourgogne</span>
+            <h1 class="font-serif text-5xl md:text-8xl mb-8 leading-tight">Le t-shirt vivant<br><span class="italic text-nature">né à Dijon.</span></h1>
+            <p class="max-w-xl mx-auto text-lg mb-10 opacity-80">Un vêtement qui évolue avec vous. À chaque lavage, une nouvelle fleur s'épanouit sur votre poitrine grâce à nos encres thermochromiques.</p>
+            
+            <div class="relative group cursor-pointer inline-block">
+                <div class="absolute -inset-1 bg-nature rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                <button class="relative bg-dark text-cream px-10 py-5 rounded-lg font-bold text-lg hover:bg-nature transition-all">
+                    Découvrir la transformation
+                </button>
+            </div>
         </div>
-    </nav>
+        
+        <div class="mt-16 reveal delay-200">
+            <!-- Simulation de Visuel T-shirt -->
+            <div class="w-64 h-80 bg-white shadow-2xl rounded-2xl mx-auto relative overflow-hidden border border-nature/20 p-8 flex items-center justify-center">
+                 <div class="text-nature opacity-40 italic">Design n°1</div>
+                 <div class="absolute bottom-10 flex flex-col items-center">
+                     <div class="w-12 h-12 border-2 border-nature rounded-full flex items-center justify-center">
+                         <div class="w-4 h-4 bg-nature rounded-full animate-pulse"></div>
+                     </div>
+                     <span class="text-[10px] mt-2 font-bold uppercase tracking-tighter">Fleur unique</span>
+                 </div>
+            </div>
+        </div>
+    </section>
 
-    <main class="pt-16">
-        <section class="split-grid border-b border-brand-dark/10">
-            <div class="p-12 md:p-24 flex flex-col justify-center border-r border-brand-dark/10">
-                <span class="text-brand-green font-black uppercase text-xs mb-4 tracking-widest italic">Solution Textile n°01</span>
-                <h1 class="font-heavy text-5xl md:text-8xl leading-none mb-8 uppercase italic">La planète te dit merci...</h1>
-                <p class="text-xl font-medium mb-12 opacity-80 leading-snug">
-                    Nous avons conçu un t-shirt vivant. <br>
-                    Un vêtement qui révèle son jardin intérieur à chaque lavage.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#shop" class="bg-brand-dark text-white px-10 py-5 font-black uppercase text-xs tracking-widest hover:bg-brand-green transition-all">Commander le prototype</a>
+    <!-- CONCEPT INTERACTIF -->
+    <section id="concept" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16 reveal">
+                <h2 class="font-serif text-4xl md:text-5xl mb-4 text-center">Le Concept Magique</h2>
+                <p class="text-center text-nature font-medium italic">« Chaque lavage révèle une nouvelle fleur, comme un rappel que la nature est vivante. »</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Carte 1 -->
+                <div class="reveal p-8 rounded-2xl bg-cream border border-nature/10 card-hover">
+                    <div class="text-xs font-bold text-nature mb-4 uppercase tracking-widest">Étape 01</div>
+                    <div class="h-48 flex items-center justify-center mb-6">
+                        <svg class="w-20 h-20 text-nature" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L9.5 8.5H2L7.5 13L5.5 20L12 15.5L18.5 20L16.5 13L22 8.5H14.5L12 2Z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 italic">Neuf</h3>
+                    <p class="opacity-70">Une fleur unique et discrète, symbole de l'éveil du projet.</p>
+                </div>
+                <!-- Carte 2 -->
+                <div class="reveal p-8 rounded-2xl bg-cream border border-nature/10 card-hover" style="transition-delay: 200ms;">
+                    <div class="text-xs font-bold text-nature mb-4 uppercase tracking-widest">Étape 02</div>
+                    <div class="h-48 flex items-center justify-center mb-6">
+                        <svg class="w-24 h-24 text-nature" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM4 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm14 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"/></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 italic">Après 1 lavage</h3>
+                    <p class="opacity-70">Le bouquet naît. Les premières teintes apparaissent délicatement.</p>
+                </div>
+                <!-- Carte 3 -->
+                <div class="reveal p-8 rounded-2xl bg-cream border border-nature/10 card-hover" style="transition-delay: 400ms;">
+                    <div class="text-xs font-bold text-nature mb-4 uppercase tracking-widest">Étape 03</div>
+                    <div class="h-48 flex items-center justify-center mb-6">
+                         <svg class="w-28 h-28 text-nature animate-pulse" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3v18m9-9H3m15.364-6.364L5.636 18.364m12.728 0L5.636 5.636"/></svg>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-2 italic">Après 3 lavages</h3>
+                    <p class="opacity-70">L'éclosion totale. Votre t-shirt est devenu une œuvre d'art florale.</p>
                 </div>
             </div>
-            <div class="bg-brand-cream relative overflow-hidden group">
-                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80" 
-                     class="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:scale-105 transition-transform duration-1000">
-                <div class="absolute bottom-8 left-8 text-[10px] font-black uppercase bg-white px-4 py-2 italic">Coton Bio GOTS / Encres Bio-réactives</div>
+        </div>
+    </section>
+
+    <!-- ENGAGEMENTS -->
+    <section class="py-24 px-6 bg-cream">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+            <div class="reveal">
+                <div class="text-3xl mb-4">🌿</div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">100% Coton Bio</h4>
+                <p class="text-[10px] opacity-60">Label GOTS certifié</p>
             </div>
-        </section>
+            <div class="reveal" style="transition-delay: 100ms;">
+                <div class="text-3xl mb-4">🎨</div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Encres Bio</h4>
+                <p class="text-[10px] opacity-60">Thermochromiques & Saines</p>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="text-3xl mb-4">♻️</div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Biodégradable</h4>
+                <p class="text-[10px] opacity-60">Zéro microplastique</p>
+            </div>
+            <div class="reveal" style="transition-delay: 300ms;">
+                <div class="text-3xl mb-4">🍯</div>
+                <h4 class="font-bold text-xs uppercase tracking-widest mb-2">Made in Bourgogne</h4>
+                <p class="text-[10px] opacity-60">Packaging kraft Fallot-inspired</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="concept" class="py-24 px-8 md:px-24 bg-tech-gray">
-            <div class="max-w-7xl mx-auto">
-                <div class="mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
-                    <h2 class="font-heavy text-4xl uppercase italic">L'Expérience de Floraison</h2>
-                    <p class="max-w-md text-sm font-medium opacity-60">
-                        Nos encres organiques s'activent au contact de l'eau. Le motif ne s'efface pas, il se complète.
-                    </p>
-                </div>
+    <!-- IMPACT -->
+    <section id="impact" class="py-24 px-6 bg-nature text-cream overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="font-serif text-4xl md:text-6xl mb-8 leading-tight">Agir pour nos forêts.</h2>
+            <p class="text-xl mb-12 opacity-90">« Nous reversons <span class="font-bold underline">2€ par vente</span> à des associations de reforestation locales en Bourgogne pour préserver notre patrimoine naturel. »</p>
+            <div class="inline-block h-1 w-24 bg-cream/30"></div>
+        </div>
+    </section>
 
-                <div class="grid md:grid-cols-3 gap-1 px-1 bg-brand-dark/10">
-                    
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
-                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ NEUF</span>
-                        <div class="h-64 my-10 flex items-center justify-center relative">
-                            <svg viewBox="0 0 100 100" class="w-48 absolute tshirt-shape">
-                                <path d="M30,10 L20,20 L20,40 L30,40 L30,90 L70,90 L70,40 L80,40 L80,20 L70,10 C60,15 40,15 30,10"/>
-                            </svg>
-                            <svg viewBox="0 0 100 100" class="w-12 z-10">
-                                <path class="flower-path" d="M50,65 L50,45 M50,45 C40,35 60,35 50,45 M50,45 C45,30 55,30 50,45 M50,45 C35,45 35,55 50,45"/>
-                                <circle cx="50" cy="45" r="2" fill="#8FA464"/>
-                            </svg>
-                        </div>
-                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Design d'origine</h3>
-                        <p class="text-xs font-bold uppercase tracking-tighter text-brand-green">Une fleur unique</p>
-                    </div>
-
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
-                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ APRÈS 1 LAVAGE</span>
-                        <div class="h-64 my-10 flex items-center justify-center relative">
-                            <svg viewBox="0 0 100 100" class="w-48 absolute tshirt-shape">
-                                <path d="M30,10 L20,20 L20,40 L30,40 L30,90 L70,90 L70,40 L80,40 L80,20 L70,10 C60,15 40,15 30,10"/>
-                            </svg>
-                            <svg viewBox="0 0 100 100" class="w-20 z-10">
-                                <g transform="translate(-10,0)">
-                                    <path class="flower-path" d="M50,65 L50,45 M50,45 C40,35 60,35 50,45 M50,45 C45,30 55,30 50,45"/>
-                                    <circle cx="50" cy="45" r="2" fill="#8FA464"/>
-                                </g>
-                                <g transform="translate(15,5) scale(0.8)">
-                                    <path class="flower-path" d="M50,65 L50,45 M50,45 C40,35 60,35 50,45 M50,45 C45,30 55,30 50,45"/>
-                                    <circle cx="50" cy="45" r="2" fill="#8FA464"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Bouquet naissant</h3>
-                        <p class="text-xs font-bold uppercase tracking-tighter text-brand-green">2 fleurs révélées</p>
-                    </div>
-
-                    <div class="bg-white p-12 transition-all hover:bg-brand-cream/30">
-                        <span class="text-[10px] font-black bg-brand-cream text-brand-green px-3 py-1 rounded-full italic">✦ APRÈS 3 LAVAGES</span>
-                        <div class="h-64 my-10 flex items-center justify-center relative">
-                            <svg viewBox="0 0 100 100" class="w-48 absolute tshirt-shape" style="opacity:0.1">
-                                <path d="M30,10 L20,20 L20,40 L30,40 L30,90 L70,90 L70,40 L80,40 L80,20 L70,10 C60,15 40,15 30,10"/>
-                            </svg>
-                            <svg viewBox="0 0 100 100" class="w-28 z-10">
-                                <path class="flower-path" d="M50,75 L50,55 M50,75 L40,60 M50,75 L60,60" stroke-width="1"/>
-                                <g transform="translate(0,-5)">
-                                    <circle cx="50" cy="50" r="3" fill="#8FA464"/>
-                                    <path class="flower-path" d="M50,50 C40,40 60,40 50,50 M50,50 C45,35 55,35 50,50"/>
-                                </g>
-                                <g transform="translate(-12,10) scale(0.7)">
-                                    <circle cx="50" cy="50" r="3" fill="#8FA464"/>
-                                    <path class="flower-path" d="M50,50 C40,40 60,40 50,50"/>
-                                </g>
-                                <g transform="translate(12,10) scale(0.7)">
-                                    <circle cx="50" cy="50" r="3" fill="#8FA464"/>
-                                    <path class="flower-path" d="M50,50 C40,40 60,40 50,50"/>
-                                </g>
-                            </svg>
-                        </div>
-                        <h3 class="font-heavy text-2xl mb-4 uppercase italic">Bouquet complet</h3>
-                        <p class="text-xs font-bold uppercase tracking-tighter text-brand-green">Floraison totale</p>
+    <!-- SHOP / PRIX -->
+    <section id="boutique" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="flex-1 reveal">
+                <div class="aspect-[4/5] bg-cream rounded-3xl flex items-center justify-center p-12 border border-nature/10">
+                    <div class="w-full h-full border-2 border-dashed border-nature/20 rounded-2xl flex flex-col items-center justify-center">
+                        <span class="text-nature/40 italic">Aperçu du modèle Dijon '24</span>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section id="impact" class="py-24 px-8 md:px-24">
-            <div class="grid md:grid-cols-2 gap-20">
-                <div class="reveal-up">
-                    <h2 class="font-heavy text-4xl mb-8 uppercase italic">Pourquoi 20€ ?</h2>
-                    <p class="mb-8 text-lg opacity-70">Nous croyons à la transparence radicale. Pas de marges excessives, juste le prix du coton bio et de l'innovation.</p>
-                    <div class="space-y-4">
-                        <div class="flex justify-between border-b border-brand-dark/10 pb-2 text-xs font-black">
-                            <span>COTON GOTS BIOLOGIQUE</span>
-                            <span>DIJON, FR</span>
-                        </div>
-                        <div class="flex justify-between border-b border-brand-dark/10 pb-2 text-xs font-black">
-                            <span>ENCRES BIO-RÉACTIVES</span>
-                            <span>SANS TOXINES</span>
-                        </div>
-                    </div>
+            <div class="flex-1 reveal">
+                <h2 class="font-serif text-5xl mb-6 italic">Le Prix Juste.</h2>
+                <div class="flex items-baseline gap-4 mb-8">
+                    <span class="text-6xl font-bold">20€</span>
+                    <span class="text-nature font-medium uppercase tracking-widest text-sm">Édition limitée</span>
                 </div>
-                <div class="impact-card p-12 flex flex-col justify-center reveal-up" style="transition-delay: 0.2s">
-                    <p class="text-3xl font-serif italic mb-6">"Le meilleur t-shirt pour la planète est celui que vous ne voudrez jamais jeter."</p>
-                    <p class="font-black uppercase text-[10px] tracking-widest text-brand-green">— Victoria Grace, Fondatrice</p>
+                <p class="text-lg opacity-80 mb-10">Un prix transparent, sans intermédiaire, pour valoriser l'artisanat bourguignon et l'écologie.</p>
+                <ul class="space-y-4 mb-10">
+                    <li class="flex items-center gap-3">✓ Livraison offerte dès 2 articles</li>
+                    <li class="flex items-center gap-3">✓ Packaging recyclable sans plastique</li>
+                    <li class="flex items-center gap-3">✓ Expédié sous 48h depuis Dijon</li>
+                </ul>
+                <button class="w-full py-5 bg-dark text-cream font-bold rounded-xl hover:bg-nature transition-all transform hover:scale-[1.02]">
+                    Ajouter au panier
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 px-6 bg-cream/50">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="font-serif text-3xl mb-12 text-center">FAQ & Entretien</h2>
+            <div class="space-y-4">
+                <details class="group bg-white rounded-xl p-6 cursor-pointer border border-nature/5">
+                    <summary class="list-none font-bold flex justify-between items-center uppercase text-sm tracking-wide">
+                        Comment l'entretenir ?
+                        <span class="group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-sm opacity-70 leading-relaxed">Lavage à 30°C maximum sur l'envers. Évitez le sèche-linge pour préserver la réactivité des encres thermochromiques.</p>
+                </details>
+                <details class="group bg-white rounded-xl p-6 cursor-pointer border border-nature/5">
+                    <summary class="list-none font-bold flex justify-between items-center uppercase text-sm tracking-wide">
+                        La fleur disparaît-elle ?
+                        <span class="group-open:rotate-180 transition-transform">↓</span>
+                    </summary>
+                    <p class="mt-4 text-sm opacity-70 leading-relaxed">Non, la transformation est permanente. À chaque passage à l'eau, les pigments réagissent et fixent le nouveau design.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-cream/80 pt-20 pb-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-2">
+                <div class="w-12 h-12 bg-nature rounded-full flex items-center justify-center text-cream font-serif text-2xl font-bold mb-6">M</div>
+                <h3 class="font-serif text-2xl text-cream mb-6">Maillot de Dijon</h3>
+                <p class="max-w-xs">Cultivons ensemble la mode de demain. Pensé, dessiné et fleuri en Bourgogne.</p>
+            </div>
+            <div>
+                <h4 class="text-cream font-bold text-xs uppercase tracking-widest mb-6">Suivez-nous</h4>
+                <div class="flex flex-col gap-4 text-sm">
+                    <a href="#" class="hover:text-nature transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-nature transition-colors">TikTok</a>
+                    <a href="#" class="hover:text-nature transition-colors">LinkedIn</a>
                 </div>
             </div>
-        </section>
-
-        <section id="shop" class="bg-brand-dark text-white py-32 px-8 text-center">
-            <h2 class="font-heavy text-6xl md:text-9xl uppercase italic mb-8">Le Maillot.</h2>
-            <p class="text-brand-green font-black text-2xl mb-12">20,00€ TTC</p>
-            <button class="bg-white text-brand-dark px-12 py-6 font-black uppercase text-sm tracking-widest hover:bg-brand-green hover:text-white transition-all">
-                Prendre part à l'aventure
-            </button>
-        </section>
-    </main>
-
-    <footer class="p-12 border-t border-brand-dark/10 text-center text-[10px] font-black uppercase tracking-widest opacity-50">
-        ©2026 Maillot de Dijon — Innovation Textile — Fait avec soin à Dijon
+            <div>
+                <h4 class="text-cream font-bold text-xs uppercase tracking-widest mb-6">Newsletter</h4>
+                <div class="flex border-b border-cream/20 pb-2">
+                    <input type="email" placeholder="Votre email" class="bg-transparent border-none outline-none flex-1 text-sm">
+                    <button class="text-xs font-bold uppercase hover:text-nature transition-colors">S'inscrire</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-cream/10 text-[10px] flex justify-between items-center uppercase tracking-widest">
+            <span>© 2024 Maillot de Dijon</span>
+            <span>Mentions légales — CGV</span>
+        </div>
     </footer>
 
     <script>
+        // ANIMATION AU SCROLL (Intersection Observer)
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
             });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal-up').forEach(el => observer.observe(el));
+
+        document.querySelectorAll('.reveal').forEach((el) => {
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
